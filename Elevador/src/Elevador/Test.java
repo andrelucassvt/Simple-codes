@@ -10,6 +10,8 @@ public class Test {
         Elevador l1 = new Elevador(10,10);
         l1.acrescentarPessoa();
         l1.subir();
+        l1.acrescentarPessoa();
+        l1.subir();
         
     }
     
