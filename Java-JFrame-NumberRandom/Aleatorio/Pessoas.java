@@ -19,6 +19,7 @@ public class Pessoas {
         this.nome[1] = "Erick Lima";
         this.nome[2] = "Andrei Victor";
         this.nome[3] = "Tayna Silva";
+        this.nome[4] = 
         
         return this.nome[x];
         
