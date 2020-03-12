@@ -91,7 +91,7 @@ public class Random extends javax.swing.JFrame {
         // TODO add your handling code here:
         Pessoas p1 = new Pessoas();
    
-        int x =(int) (Math.random() * 4);
+        int x =(int) (Math.random() * 25);
 
         String y = Integer.toString(x);
         txtresultado.setText(p1.lista(x));
