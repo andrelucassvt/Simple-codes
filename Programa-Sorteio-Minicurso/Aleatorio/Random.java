@@ -129,63 +129,103 @@ public class Random extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
      
-
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private static javax.swing.JButton jbotao;
+    private javax.swing.JButton jfinal;
+    private javax.swing.JButton reset;
+    private javax.swing.JLabel txtpessoa1;
+    private javax.swing.JLabel txtpessoa2;
+    private javax.swing.JLabel txtpessoa3;
+    // End of variables declaration//GEN-END:variables
+    
+    int quantidadeDeApertosDoBotao = 0;
+    
     private void jbotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbotaoActionPerformed
         // TODO add your handling code here:
         Pessoas p1 = new Pessoas();
         
-        
-        boolean a = true;
-        
-        //add pessoa 1
-        int x1 = (int) (Math.random() * 25);
-        int arm1 = x1;
+        if( quantidadeDeApertosDoBotao == 0 ) {
+        	//add pessoa 1
+            int x1 = (int) (Math.random() * 25);
+            int arm1 = x1;
+                    
+            //add pessoa 2 
+            int x2 = (int) (Math.random() * 25);
+            int arm2;
+             
+           //add pessoa 3 
+            int x3 = (int) (Math.random() * 25);
+            int arm3 = x3;
+          
+           //Codigo para os nomes serem diferentes======================
+             if(x1 != x2 && x1 != x3){
                 
-        //add pessoa 2 
-        int x2 = (int) (Math.random() * 25);
-        int arm2;
-         
-       //add pessoa 3 
-        int x3 = (int) (Math.random() * 25);
-        int arm3 = x3;
-      
-       //Codigo para os nomes serem diferentes======================
-         if(x1 != x2 && x1 != x3){
-            
-           arm1 = x1;
-           txtpessoa1.setText(p1.lista(arm1));
-        }else if(x1 != x3 && x1 != x2){
-            
-           arm1 = x1;
-           txtpessoa1.setText(p1.lista(arm1));
-        } 
-       
-        if(x2 != x3 && x2 != x1){
-            
-           arm2 = x2;
-           txtpessoa2.setText(p1.lista(arm2));
+               arm1 = x1;
+               txtpessoa1.setText(p1.lista(arm1));
+            }else if(x1 != x3 && x1 != x2){
+                
+               arm1 = x1;
+               txtpessoa1.setText(p1.lista(arm1));
+            } 
            
-        }else if(x2 != x1 && x2 != x3){
+            if(x2 != x3 && x2 != x1){
+                
+               arm2 = x2;
+               txtpessoa2.setText(p1.lista(arm2));
+               
+            }else if(x2 != x1 && x2 != x3){
+                
+               arm2 = x2;
+               txtpessoa2.setText(p1.lista(arm2));
+                
+            } 
             
-           arm2 = x2;
-           txtpessoa2.setText(p1.lista(arm2));
             
-        } 
-        
-        
-        if(x3 != x1 && x3 != x2){
-            arm3 = x3;
-           txtpessoa3.setText(p1.lista(arm3));
+            if(x3 != x1 && x3 != x2){
+                arm3 = x3;
+               txtpessoa3.setText(p1.lista(arm3));
+                
+            }else if(x3 != x1 && x3!=x2){
+               arm3 = x3;
+               txtpessoa3.setText(p1.lista(arm3));
+            }
             
-        }else if(x3 != x1 && x3!=x2){
-           arm3 = x3;
-           txtpessoa3.setText(p1.lista(arm3));
+            //====================================
+            
+            quantidadeDeApertosDoBotao++;
+            
+            jbotao.setText("Sortear o Vencedor");
+            
+        } else if ( quantidadeDeApertosDoBotao == 1 ) {
+        	
+            int x = (int) (1+Math.random() * 3);
+            
+            switch(x){
+                case 1:
+                 txtpessoa1.getText();
+                 txtpessoa2.setText("");
+                 txtpessoa3.setText("");
+                 break;
+                 
+                case 2:
+                    txtpessoa1.setText("");
+                    txtpessoa2.getText();
+                    txtpessoa3.setText("");
+                    break;
+                    
+                case 3:
+                    txtpessoa1.setText("");
+                    txtpessoa2.setText("");
+                    txtpessoa3.getText();
+                    break;
+            }
+            
+            quantidadeDeApertosDoBotao = 0;
+            jbotao.setText("Sortear os 3");
         }
-        
-        //====================================
-        
-    
-     
+                   
         
     }//GEN-LAST:event_jbotaoActionPerformed
 
@@ -194,31 +234,12 @@ public class Random extends javax.swing.JFrame {
         txtpessoa1.setText("-----------");
         txtpessoa2.setText("-----------");
         txtpessoa3.setText("-----------");
+        quantidadeDeApertosDoBotao = 0;
     }//GEN-LAST:event_resetActionPerformed
 
     private void jfinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfinalActionPerformed
         // TODO add your handling code here:
-       int x = (int) (1+Math.random() * 3);
-       
-       switch(x){
-           case 1:
-            txtpessoa1.getText();
-            txtpessoa2.setText("");
-            txtpessoa3.setText("");
-            break;
-            
-           case 2:
-               txtpessoa1.setText("");
-               txtpessoa2.getText();
-               txtpessoa3.setText("");
-               break;
-               
-           case 3:
-               txtpessoa1.setText("");
-               txtpessoa2.setText("");
-               txtpessoa3.getText();
-               break;
-       }
+    	System.out.println("Função todo");
     }//GEN-LAST:event_jfinalActionPerformed
 
    
@@ -231,16 +252,5 @@ public class Random extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private static javax.swing.JButton jbotao;
-    private javax.swing.JButton jfinal;
-    private javax.swing.JButton reset;
-    private javax.swing.JLabel txtpessoa1;
-    private javax.swing.JLabel txtpessoa2;
-    private javax.swing.JLabel txtpessoa3;
-    // End of variables declaration//GEN-END:variables
 
 }
