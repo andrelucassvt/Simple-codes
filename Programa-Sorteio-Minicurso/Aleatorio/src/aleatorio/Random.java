@@ -131,52 +131,52 @@ public class Random extends javax.swing.JFrame {
     
     private void jbotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbotaoActionPerformed
         // TODO add your handling code here:
-        Pessoas p1 = new Pessoas();
+        Pessoas lista = new Pessoas();
         
         if( quantidadeDeApertosDoBotao == 0 ) {
         	//add pessoa 1
-            int x1 = (int) (Math.random() * 25);
-            int arm1 = x1;
+            int NumerosAleatorios1 = (int) (Math.random() * 25);
+            int Armazenar_N_Aleatorio1;
                     
             //add pessoa 2 
-            int x2 = (int) (Math.random() * 25);
-            int arm2;
+            int NumerosAleatorios2 = (int) (Math.random() * 25);
+            int Armazenar_N_Aleatorio2;
              
            //add pessoa 3 
-            int x3 = (int) (Math.random() * 25);
-            int arm3 = x3;
+            int NumerosAleatorios3 = (int) (Math.random() * 25);
+            int Armazenar_N_Aleatorio3;
           
            //Codigo para os nomes serem diferentes======================
-             if(x1 != x2 && x1 != x3){
+             if(NumerosAleatorios1 != NumerosAleatorios2 && NumerosAleatorios1 != NumerosAleatorios3){
                 
-               arm1 = x1;
-               txtpessoa1.setText(p1.lista(arm1));
-            }else if(x1 != x3 && x1 != x2){
+               Armazenar_N_Aleatorio1 = NumerosAleatorios1;
+               txtpessoa1.setText(lista.lista(NumerosAleatorios1));
+            }else if(NumerosAleatorios1 != NumerosAleatorios3 && NumerosAleatorios1 != NumerosAleatorios2){
                 
-               arm1 = x1;
-               txtpessoa1.setText(p1.lista(arm1));
+               Armazenar_N_Aleatorio1 = NumerosAleatorios1;
+               txtpessoa1.setText(lista.lista(Armazenar_N_Aleatorio1));
             } 
            
-            if(x2 != x3 && x2 != x1){
+            if(NumerosAleatorios2 != NumerosAleatorios3 && NumerosAleatorios2 != NumerosAleatorios1){
                 
-               arm2 = x2;
-               txtpessoa2.setText(p1.lista(arm2));
+               Armazenar_N_Aleatorio2 = NumerosAleatorios2;
+               txtpessoa2.setText(lista.lista(Armazenar_N_Aleatorio2));
                
-            }else if(x2 != x1 && x2 != x3){
+            }else if(NumerosAleatorios2 != NumerosAleatorios1 && NumerosAleatorios2 != NumerosAleatorios3){
                 
-               arm2 = x2;
-               txtpessoa2.setText(p1.lista(arm2));
+               Armazenar_N_Aleatorio2 = NumerosAleatorios2;
+               txtpessoa2.setText(lista.lista(Armazenar_N_Aleatorio2));
                 
             } 
             
             
-            if(x3 != x1 && x3 != x2){
-                arm3 = x3;
-               txtpessoa3.setText(p1.lista(arm3));
+            if(NumerosAleatorios3 != NumerosAleatorios1 && NumerosAleatorios3 != NumerosAleatorios2){
+                Armazenar_N_Aleatorio3 = NumerosAleatorios3;
+               txtpessoa3.setText(lista.lista(Armazenar_N_Aleatorio3));
                 
-            }else if(x3 != x1 && x3!=x2){
-               arm3 = x3;
-               txtpessoa3.setText(p1.lista(arm3));
+            }else if(NumerosAleatorios3 != NumerosAleatorios1 && NumerosAleatorios3!=NumerosAleatorios2){
+               Armazenar_N_Aleatorio3 = NumerosAleatorios3;
+               txtpessoa3.setText(lista.lista(Armazenar_N_Aleatorio3));
             }
             
             //====================================
